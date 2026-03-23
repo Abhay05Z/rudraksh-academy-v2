@@ -10,6 +10,14 @@
     
     if (!isMobile) return; // Exit if not mobile - desktop remains unchanged
     
+    // Wait for page to fully load before activating
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initMobileInteractions);
+    } else {
+        initMobileInteractions();
+    }
+    
+    function initMobileInteractions() {
     console.log('🎨 Enhanced Mobile Interactions Activated');
     
     // ===== GLOBAL STATE MANAGEMENT =====
@@ -21,24 +29,31 @@
         ticking: false
     };
     
-    // Configuration
+    // Configuration - Optimized for smooth performance
     const config = {
         scroll: {
-            heroMultiplier: 0.4,
-            cardMultiplier: 25,
-            bgMultiplier: 0.15
+            heroMultiplier: 0.5,
+            cardMultiplier: 30,
+            bgMultiplier: 0.2
         },
         touch: {
-            sensitivity: 0.08,
+            sensitivity: 0.15,  // Increased for more noticeable effect
             smoothing: 0.15,
-            maxOffset: 40
+            maxOffset: 50       // Increased range
         },
         gyro: {
-            sensitivity: 2.5, // Increased from 1.0 for more noticeable effect
-            smoothing: 0.2,
-            maxTilt: 35 // Increased from 30
+            sensitivity: 3.5,   // Further increased for very noticeable effect
+            smoothing: 0.25,
+            maxTilt: 40         // Increased detection range
         }
     };
+    
+    // Prevent GSAP conflicts - disable GSAP transforms on mobile
+    if (typeof gsap !== 'undefined') {
+        gsap.set('.hero-title, .hero-text, .hero-buttons, .page-header h1, .page-header p, .info-card, .glass-card, .course-card, .feature-card, #bg3d', {
+            clearProps: 'transform'
+        });
+    }
     
     // ===== UNIFIED UPDATE FUNCTION =====
     // Combines scroll, touch, and gyro effects without conflicts
@@ -62,7 +77,7 @@
             if (bg3d) {
                 const bgX = state.combined.x * config.scroll.bgMultiplier;
                 const bgY = state.combined.y * config.scroll.bgMultiplier + state.scroll.y * 0.05;
-                bg3d.style.transform = `translate(${bgX}px, ${bgY}px)`;
+                bg3d.style.transform = `translate3d(${bgX}px, ${bgY}px, 0)`;
             }
             
             // ===== 2. HERO SECTION (All Pages) =====
@@ -72,23 +87,26 @@
             
             if (heroTitle) {
                 const scrollOffset = state.scroll.y * config.scroll.heroMultiplier;
-                const tiltX = state.combined.x * 0.3;
-                const tiltY = state.combined.y * 0.3;
-                heroTitle.style.transform = `translate(${tiltX}px, ${scrollOffset + tiltY}px)`;
+                const tiltX = state.combined.x * 0.5;  // Increased from 0.3
+                const tiltY = state.combined.y * 0.5;  // Increased from 0.3
+                heroTitle.style.transform = `translate3d(${tiltX}px, ${scrollOffset + tiltY}px, 0)`;
+                heroTitle.style.transition = 'none';
             }
             
             if (heroText) {
                 const scrollOffset = state.scroll.y * (config.scroll.heroMultiplier * 0.7);
-                const tiltX = state.combined.x * 0.2;
-                const tiltY = state.combined.y * 0.2;
-                heroText.style.transform = `translate(${tiltX}px, ${scrollOffset + tiltY}px)`;
+                const tiltX = state.combined.x * 0.35;  // Increased from 0.2
+                const tiltY = state.combined.y * 0.35;  // Increased from 0.2
+                heroText.style.transform = `translate3d(${tiltX}px, ${scrollOffset + tiltY}px, 0)`;
+                heroText.style.transition = 'none';
             }
             
             if (heroButtons) {
                 const scrollOffset = state.scroll.y * (config.scroll.heroMultiplier * 0.5);
-                const tiltX = state.combined.x * 0.15;
-                const tiltY = state.combined.y * 0.15;
-                heroButtons.style.transform = `translate(${tiltX}px, ${scrollOffset + tiltY}px)`;
+                const tiltX = state.combined.x * 0.25;  // Increased from 0.15
+                const tiltY = state.combined.y * 0.25;  // Increased from 0.15
+                heroButtons.style.transform = `translate3d(${tiltX}px, ${scrollOffset + tiltY}px, 0)`;
+                heroButtons.style.transition = 'none';
             }
             
             // ===== 3. CARDS & IMPORTANT ELEMENTS (All Pages) =====
@@ -104,12 +122,13 @@
                     const distance = (cardCenter - windowCenter) / window.innerHeight;
                     const scrollParallax = distance * config.scroll.cardMultiplier;
                     
-                    // Touch/Gyro effect (layered depth)
-                    const depthMultiplier = 0.3 + (index % 3) * 0.15;
+                    // Touch/Gyro effect (layered depth) - INCREASED
+                    const depthMultiplier = 0.5 + (index % 3) * 0.2;  // Increased from 0.3 and 0.15
                     const tiltX = state.combined.x * depthMultiplier;
                     const tiltY = state.combined.y * depthMultiplier;
                     
-                    card.style.transform = `translate(${tiltX}px, ${scrollParallax + tiltY}px)`;
+                    card.style.transform = `translate3d(${tiltX}px, ${scrollParallax + tiltY}px, 0)`;
+                    card.style.transition = 'none';
                 }
             });
             
@@ -118,9 +137,10 @@
             sectionHeaders.forEach((header, index) => {
                 const rect = header.getBoundingClientRect();
                 if (rect.top < window.innerHeight && rect.bottom > 0) {
-                    const tiltX = state.combined.x * 0.25;
-                    const tiltY = state.combined.y * 0.25;
-                    header.style.transform = `translate(${tiltX}px, ${tiltY}px)`;
+                    const tiltX = state.combined.x * 0.4;  // Increased from 0.25
+                    const tiltY = state.combined.y * 0.4;  // Increased from 0.25
+                    header.style.transform = `translate3d(${tiltX}px, ${tiltY}px, 0)`;
+                    header.style.transition = 'none';
                 }
             });
             
@@ -129,10 +149,11 @@
             stats.forEach((stat, index) => {
                 const rect = stat.getBoundingClientRect();
                 if (rect.top < window.innerHeight && rect.bottom > 0) {
-                    const depthMultiplier = 0.2 + (index % 4) * 0.1;
+                    const depthMultiplier = 0.3 + (index % 4) * 0.15;  // Increased from 0.2 and 0.1
                     const tiltX = state.combined.x * depthMultiplier;
                     const tiltY = state.combined.y * depthMultiplier;
-                    stat.style.transform = `translate(${tiltX}px, ${tiltY}px)`;
+                    stat.style.transform = `translate3d(${tiltX}px, ${tiltY}px, 0)`;
+                    stat.style.transition = 'none';
                 }
             });
             
@@ -298,25 +319,19 @@
             .info-card, .glass-card, .course-card, .feature-card, .result-card,
             .teacher-card, .gallery-item, .section-header, .section-title,
             .stat-card, .stat-item {
-                -webkit-transform: translateZ(0);
-                transform: translateZ(0);
-                -webkit-backface-visibility: hidden;
-                backface-visibility: hidden;
-                will-change: transform;
+                -webkit-transform: translateZ(0) !important;
+                transform: translateZ(0) !important;
+                -webkit-backface-visibility: hidden !important;
+                backface-visibility: hidden !important;
+                will-change: transform !important;
             }
             
-            /* Smooth transitions */
-            .hero-title, .hero-text, .hero-buttons, .page-header h1, .page-header p {
-                transition: transform 0.1s ease-out;
-            }
-            
+            /* NO transitions - prevent stuttering */
+            .hero-title, .hero-text, .hero-buttons, .page-header h1, .page-header p,
             .info-card, .glass-card, .course-card, .feature-card, .result-card,
-            .teacher-card, .gallery-item {
-                transition: transform 0.15s ease-out;
-            }
-            
-            #bg3d {
-                transition: transform 0.2s ease-out;
+            .teacher-card, .gallery-item, .section-header, .section-title,
+            .stat-card, .stat-item, #bg3d {
+                transition: none !important;
             }
             
             /* Prevent text selection during touch */
@@ -352,20 +367,24 @@
     }, { passive: true });
     
     // ===== INITIAL UPDATE =====
-    // Run initial update after page load
+    // Run initial update after page load and GSAP animations complete
     setTimeout(() => {
         updateAllEffects();
-    }, 100);
+        console.log('✅ Initial mobile effects applied');
+    }, 1500);  // Wait for GSAP to finish
     
     // ===== CONTINUOUS ANIMATION LOOP =====
-    // Keep effects smooth even when idle
+    // Keep effects smooth - run constantly for immediate response
     function animationLoop() {
-        if (state.gyro.active || state.touch.active) {
+        // Always update if gyro or touch is active
+        if (state.gyro.active || state.touch.active || state.scroll.y > 0) {
             updateAllEffects();
         }
         requestAnimationFrame(animationLoop);
     }
-    animationLoop();
+    
+    // Start animation loop
+    requestAnimationFrame(animationLoop);
     
     // ===== STATUS LOG =====
     console.log('✅ Enhanced Mobile Interactions Initialized:', {
@@ -402,4 +421,6 @@
             `;
         }, 100);
     }
+    
+    } // End initMobileInteractions
 })();
