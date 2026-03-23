@@ -401,36 +401,8 @@
             });
         });
 
-        // Info card animations with stagger effect
-        gsap.utils.toArray('.info-card').forEach((card, i) => {
-            gsap.from(card, {
-                scrollTrigger: {
-                    trigger: card,
-                    start: 'top 85%',
-                    toggleActions: 'play none none reverse'
-                },
-                y: 80,
-                opacity: 0,
-                scale: 0.9,
-                rotation: 5,
-                duration: 1,
-                delay: i * 0.15,
-                ease: 'back.out(1.7)'
-            });
-            
-            // Animate icon separately for extra effect
-            gsap.from(card.querySelector('.info-icon'), {
-                scrollTrigger: {
-                    trigger: card,
-                    start: 'top 85%'
-                },
-                scale: 0,
-                rotation: 360,
-                duration: 0.8,
-                delay: i * 0.15 + 0.3,
-                ease: 'elastic.out(1, 0.5)'
-            });
-        });
+        // Info cards - no animation, always visible
+        // Cards remain in their original positions
 
         // Mobile menu
         document.getElementById('navToggle').addEventListener('click', () => {

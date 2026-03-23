@@ -381,7 +381,6 @@ a {
 }
 
 .glass-card:hover {
-    transform: translateY(-10px);
     border-color: var(--primary-blue);
     box-shadow: var(--glow-blue);
 }
@@ -461,7 +460,6 @@ a {
 }
 
 .info-card:hover {
-    transform: translateY(-15px) scale(1.02);
     box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3);
 }
 
@@ -483,7 +481,7 @@ a {
 }
 
 .info-card:hover .info-icon {
-    transform: rotateY(360deg) scale(1.1);
+    transform: rotateY(360deg);
     box-shadow: 0 10px 40px rgba(59, 130, 246, 0.6);
 }
 
@@ -506,7 +504,6 @@ a {
 
 .info-card:hover h3 {
     color: var(--primary-blue-light);
-    transform: scale(1.05);
 }
 
 .info-card p {
@@ -911,11 +908,32 @@ a {
 }
 
 @media (max-width: 768px) {
+    /* Navigation */
+    .navbar {
+        padding: 1rem 0;
+    }
+    
+    .nav-container {
+        padding: 0 1rem;
+    }
+    
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+    
+    .nav-logo i,
+    .nav-logo img {
+        font-size: 1.5rem;
+        width: 35px;
+        height: 35px;
+    }
+    
     .nav-links {
         position: fixed;
         top: 80px;
         left: 0;
         width: 100%;
+        height: calc(100vh - 80px);
         background: rgba(10, 15, 26, 0.98);
         backdrop-filter: blur(20px);
         flex-direction: column;
@@ -923,10 +941,18 @@ a {
         gap: 1.5rem;
         transform: translateX(-100%);
         transition: transform 0.3s ease;
+        z-index: 999;
+        overflow-y: auto;
     }
     
     .nav-links.active {
         transform: translateX(0);
+    }
+    
+    .nav-link {
+        font-size: 1.1rem;
+        padding: 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     
     .nav-cta {
@@ -937,30 +963,143 @@ a {
         display: block;
     }
     
-    .stats-grid,
-    .info-grid,
-    .courses-grid,
-    .features-grid {
-        grid-template-columns: 1fr;
+    /* Hero Section */
+    .hero {
+        min-height: 70vh;
+        padding: 8rem 0 4rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .title-main {
+        font-size: 2.5rem;
+    }
+    
+    .title-sub {
+        font-size: 1.8rem;
+    }
+    
+    .hero-text {
+        font-size: 1rem;
+        padding: 0 1rem;
     }
     
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 1rem;
     }
     
     .btn {
         width: 100%;
         max-width: 300px;
         justify-content: center;
+        padding: 1rem 2rem;
+        font-size: 1rem;
     }
     
+    /* Grids */
+    .stats-grid,
+    .info-grid,
+    .courses-grid,
+    .features-grid,
+    .gallery-grid,
+    .teachers-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    /* Cards */
+    .glass-card,
+    .info-card,
+    .course-card,
+    .feature-card {
+        padding: 1.5rem;
+    }
+    
+    .info-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    /* Forms */
     .form-row {
         grid-template-columns: 1fr;
     }
     
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 1rem;
+        padding: 0.9rem;
+    }
+    
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .footer-section {
+        width: 100%;
+    }
+    
     .footer-links {
         flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    /* Floating Buttons */
+    .whatsapp-float,
+    .chatbot-toggle {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    
+    .whatsapp-float {
+        bottom: 80px;
+        right: 15px;
+    }
+    
+    .chatbot-toggle {
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    /* Page Headers */
+    .page-header {
+        padding: 8rem 0 4rem;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    
+    .page-header p {
+        font-size: 1rem;
+    }
+    
+    /* Section Spacing */
+    section {
+        padding: 3rem 0;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-tag {
+        font-size: 0.85rem;
+        padding: 0.4rem 1rem;
     }
 }
 
@@ -969,12 +1108,83 @@ a {
         padding: 0 1rem;
     }
     
-    .glass-card {
-        padding: 1.5rem;
+    /* Typography */
+    .hero-title {
+        font-size: 1.5rem;
+    }
+    
+    .title-main {
+        font-size: 2rem;
+    }
+    
+    .title-sub {
+        font-size: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    /* Cards */
+    .glass-card,
+    .info-card {
+        padding: 1.2rem;
+    }
+    
+    .info-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    
+    .info-card h3 {
+        font-size: 1.2rem;
     }
     
     .stat-number {
-        font-size: 2.5rem;
+        font-size: 2rem;
+    }
+    
+    .stat-label {
+        font-size: 0.85rem;
+    }
+    
+    /* Buttons */
+    .btn {
+        padding: 0.9rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Forms */
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+    }
+    
+    /* Navigation */
+    .nav-logo {
+        font-size: 1rem;
+    }
+    
+    .nav-logo i,
+    .nav-logo img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    /* Footer */
+    .footer-logo {
+        font-size: 1.2rem;
+    }
+    
+    .footer-links a {
+        font-size: 0.9rem;
     }
 }
 
@@ -1630,13 +1840,116 @@ a {
     display: none;
 }
 
-/* Responsive */
+/* ===== CHATBOT RESPONSIVE ===== */
 @media (max-width: 768px) {
+    .chatbot-page {
+        height: 100vh;
+        overflow: hidden;
+    }
+    
+    .chatbot-header {
+        padding: 1rem;
+        flex-wrap: wrap;
+    }
+    
+    .chatbot-header-left {
+        flex: 1;
+        min-width: 0;
+    }
+    
+    .chatbot-back {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .chatbot-back span {
+        display: none;
+    }
+    
+    .chatbot-avatar {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .chatbot-avatar img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .chatbot-info h3 {
+        font-size: 1rem;
+    }
+    
+    .chatbot-status {
+        font-size: 0.75rem;
+    }
+    
+    .chatbot-close {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+    
+    .chatbot-content {
+        flex-direction: column;
+        height: calc(100vh - 80px);
+    }
+    
     .chatbot-sidebar {
         display: none;
     }
     
+    .chatbot-main {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .chatbot-messages {
+        padding: 1rem;
+        gap: 1rem;
+        height: calc(100% - 70px);
+    }
+    
     .chatbot-message {
         max-width: 85%;
+        font-size: 0.9rem;
+        padding: 0.8rem 1rem;
+    }
+    
+    .quick-options {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .quick-option {
+        font-size: 0.8rem;
+        padding: 0.6rem 1rem;
+        flex: 1 1 calc(50% - 0.5rem);
+        min-width: 140px;
+    }
+    
+    .chatbot-input-area {
+        padding: 0.8rem;
+    }
+    
+    .input-wrapper {
+        gap: 0.5rem;
+    }
+    
+    .attach-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    #chatbotInput {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+    }
+    
+    .chatbot-send {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
     }
 }
