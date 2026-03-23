@@ -1066,12 +1066,12 @@ a {
     }
     
     .whatsapp-float {
-        bottom: 80px;
-        right: 15px;
+        bottom: 20px;
+        right: 80px;
     }
     
     .chatbot-toggle {
-        bottom: 15px;
+        bottom: 20px;
         right: 15px;
     }
     
