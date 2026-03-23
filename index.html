@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rudraksh Academy - Beyond Imagination</title>
+    <meta name="description" content="Premier coaching institute for grades 5th to 12th in Jaipur">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 3D Background Canvas -->
+    <canvas id="bg3d"></canvas>
+
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <i class="fas fa-graduation-cap loader-icon"></i>
+            <div class="loader-spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Rudraksh Academy</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="courses.html" class="nav-link">Courses</a>
+                <a href="features.html" class="nav-link">Features</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="results.html" class="nav-link">Results</a>
+                <a href="booking.html" class="nav-link">Book Now</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <a href="booking.html" class="nav-cta">Enroll Now</a>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section - HOME PAGE ONLY -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-main">Rudraksh Academy</span>
+                <span class="title-sub">Beyond Imagination</span>
+            </h1>
+            <p class="hero-text">Premier Coaching for Grades 5th to 12th</p>
+            <div class="hero-buttons">
+                <a href="contact.html" class="btn btn-primary">
+                    <span>Enroll Now</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="courses.html" class="btn btn-secondary">
+                    <span>View Courses</span>
+                    <i class="fas fa-book-open"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Scroll Down</p>
+        </div>
+    </section>
+
+    <!-- Stats Section - HOME PAGE ONLY -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card glass-card">
+                    <div class="stat-number" data-count="500">0</div>
+                    <div class="stat-label">Happy Students</div>
+                </div>
+                <div class="stat-card glass-card">
+                    <div class="stat-number" data-count="95">0</div>
+                    <div class="stat-label">Success Rate %</div>
+                </div>
+                <div class="stat-card glass-card">
+                    <div class="stat-number" data-count="8">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card glass-card">
+                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-label">Expert Faculty</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Info Section - HOME PAGE ONLY -->
+    <section class="quick-info">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Why Choose Us</span>
+                <h2 class="section-title">Excellence in Education</h2>
+            </div>
+            <div class="info-grid">
+                <div class="info-card glass-card">
+                    <div class="info-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Expert Faculty</h3>
+                    <p>Experienced teachers with proven track record</p>
+                </div>
+                <div class="info-card glass-card">
+                    <div class="info-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Small Batches</h3>
+                    <p>Personal attention with limited batch sizes</p>
+                </div>
+                <div class="info-card glass-card">
+                    <div class="info-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Proven Results</h3>
+                    <p>95% success rate in board examinations</p>
+                </div>
+            </div>
+            <div class="cta-center">
+                <a href="about.html" class="btn btn-primary">
+                    <span>Learn More About Us</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Rudraksh Academy</span>
+                </div>
+                <p>Beyond Imagination - Premier Coaching</p>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="courses.html">Courses</a>
+                    <a href="features.html">Features</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="results.html">Results</a>
+                    <a href="booking.html">Book Now</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <p class="copyright">&copy; 2026 Rudraksh Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919024401590" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Chatbot Toggle -->
+    <a href="chatbot.html" class="chatbot-toggle">
+        <i class="fas fa-comments"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="common.js"></script>
+    <script>
+        // ===== INDEX.HTML - PARTICLES + ATOMS 3D BACKGROUND =====
+        
+        const canvas = document.getElementById('bg3d');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        camera.position.z = 5;
+
+        // Particles
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesCount = window.innerWidth < 768 ? 800 : 2000;
+        const posArray = new Float32Array(particlesCount * 3);
+        
+        for(let i = 0; i < particlesCount * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 15;
+        }
+        
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        
+        const particlesMaterial = new THREE.PointsMaterial({
+            size: 0.02,
+            color: 0x60a5fa,
+            transparent: true,
+            opacity: 0.8,
+            blending: THREE.AdditiveBlending
+        });
+        
+        const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particles);
+
+        // Atoms (Floating spheres with orbits)
+        const atoms = [];
+        for(let i = 0; i < 5; i++) {
+            const atomGroup = new THREE.Group();
+            
+            // Nucleus
+            const nucleusGeo = new THREE.SphereGeometry(0.15, 32, 32);
+            const nucleusMat = new THREE.MeshBasicMaterial({ 
+                color: 0xfbbf24,
+                transparent: true,
+                opacity: 0.9
+            });
+            const nucleus = new THREE.Mesh(nucleusGeo, nucleusMat);
+            atomGroup.add(nucleus);
+            
+            // Orbit ring
+            const orbitGeo = new THREE.TorusGeometry(0.4, 0.01, 16, 100);
+            const orbitMat = new THREE.MeshBasicMaterial({ 
+                color: 0x3b82f6,
+                transparent: true,
+                opacity: 0.6
+            });
+            const orbit = new THREE.Mesh(orbitGeo, orbitMat);
+            orbit.rotation.x = Math.PI / 2;
+            atomGroup.add(orbit);
+            
+            // Electron
+            const electronGeo = new THREE.SphereGeometry(0.05, 16, 16);
+            const electronMat = new THREE.MeshBasicMaterial({ color: 0x60a5fa });
+            const electron = new THREE.Mesh(electronGeo, electronMat);
+            electron.position.x = 0.4;
+            atomGroup.add(electron);
+            
+            atomGroup.position.set(
+                (Math.random() - 0.5) * 8,
+                (Math.random() - 0.5) * 6,
+                (Math.random() - 0.5) * 4
+            );
+            atomGroup.rotation.set(
+                Math.random() * Math.PI,
+                Math.random() * Math.PI,
+                Math.random() * Math.PI
+            );
+            
+            atoms.push({ group: atomGroup, electron, speed: 0.02 + Math.random() * 0.03 });
+            scene.add(atomGroup);
+        }
+
+        // Floating Books
+        const books = [];
+        for(let i = 0; i < 4; i++) {
+            const bookGeo = new THREE.BoxGeometry(0.4, 0.5, 0.08);
+            const bookMat = new THREE.MeshBasicMaterial({ 
+                color: i % 2 === 0 ? 0x3b82f6 : 0xfbbf24,
+                transparent: true,
+                opacity: 0.7
+            });
+            const book = new THREE.Mesh(bookGeo, bookMat);
+            book.position.set(
+                (Math.random() - 0.5) * 10,
+                (Math.random() - 0.5) * 8,
+                (Math.random() - 0.5) * 5
+            );
+            book.rotation.set(
+                Math.random() * Math.PI,
+                Math.random() * Math.PI,
+                Math.random() * Math.PI
+            );
+            books.push(book);
+            scene.add(book);
+        }
+
+        // Mouse movement
+        let mouseX = 0, mouseY = 0;
+        document.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+            mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+        });
+
+        // Scroll progress tracker
+        let scrollProgress = 0;
+        window.addEventListener('scroll', () => {
+            scrollProgress = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+        });
+
+        // Animation with scroll evolution
+        let time = 0;
+        function animate() {
+            requestAnimationFrame(animate);
+            time += 0.01;
+            
+            // Particles evolve with scroll - speed increases
+            const particleSpeed = 0.0005 + scrollProgress * 0.003;
+            particles.rotation.y += particleSpeed;
+            particles.rotation.x += particleSpeed * 0.4;
+            
+            // Particle color shifts with scroll (blue -> cyan -> purple)
+            particlesMaterial.color.setHSL(0.55 + scrollProgress * 0.15, 0.7, 0.5 + scrollProgress * 0.2);
+            
+            // Atoms rotate faster and orbit wider as you scroll
+            atoms.forEach((atom, i) => {
+                const atomSpeed = 0.005 + scrollProgress * 0.015;
+                const orbitRadius = 0.4 + scrollProgress * 0.4;
+                
+                atom.group.rotation.y += atomSpeed;
+                atom.group.rotation.z += atomSpeed * 0.6;
+                atom.electron.position.x = Math.cos(time * atom.speed * 50) * orbitRadius;
+                atom.electron.position.z = Math.sin(time * atom.speed * 50) * orbitRadius;
+                atom.group.position.y += Math.sin(time + i) * 0.002;
+                
+                // Scale atoms larger on scroll
+                const scale = 1 + scrollProgress * 0.6;
+                atom.group.scale.set(scale, scale, scale);
+            });
+            
+            // Books spin faster on scroll
+            books.forEach((book, i) => {
+                const bookSpeed = 1 + scrollProgress * 2;
+                book.rotation.x += 0.003 * bookSpeed;
+                book.rotation.y += 0.005 * bookSpeed;
+                book.position.y += Math.sin(time * 0.5 + i) * 0.003;
+            });
+            
+            // Camera zooms in and rotates scene on scroll
+            const targetZ = 5 - scrollProgress * 2;
+            camera.position.x += (mouseX * 5 - camera.position.x) * 0.08;
+            camera.position.y += (mouseY * 4 - camera.position.y) * 0.08;
+            camera.position.z += (targetZ - camera.position.z) * 0.05;
+            
+            // Rotate entire scene on scroll
+            scene.rotation.y = scrollProgress * 0.5;
+            
+            camera.lookAt(scene.position);
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Resize handler
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // ===== GSAP ANIMATIONS =====
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hide loader
+        window.addEventListener('load', () => {
+            gsap.to('#loader', { opacity: 0, duration: 0.5, delay: 1, onComplete: () => {
+                document.getElementById('loader').style.display = 'none';
+            }});
+        });
+
+        // Hero animations
+        gsap.from('.hero-title .title-main', { y: 100, opacity: 0, duration: 1, delay: 1.2 });
+        gsap.from('.hero-title .title-sub', { y: 100, opacity: 0, duration: 1, delay: 1.4 });
+        gsap.from('.hero-text', { y: 50, opacity: 0, duration: 1, delay: 1.6 });
+        gsap.from('.hero-buttons', { y: 50, opacity: 0, duration: 1, delay: 1.8 });
+        gsap.from('.scroll-indicator', { opacity: 0, duration: 1, delay: 2.2 });
+
+        // Stats counter animation
+        const statNumbers = document.querySelectorAll('.stat-number');
+        statNumbers.forEach(stat => {
+            const target = parseInt(stat.dataset.count);
+            gsap.to(stat, {
+                scrollTrigger: {
+                    trigger: stat,
+                    start: 'top 80%'
+                },
+                innerHTML: target,
+                duration: 2,
+                snap: { innerHTML: 1 }
+            });
+        });
+
+        // Card animations
+        gsap.utils.toArray('.glass-card').forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 85%'
+                },
+                y: 60,
+                opacity: 0,
+                duration: 0.8,
+                delay: i * 0.1
+            });
+        });
+
+        // Info card animations with stagger effect
+        gsap.utils.toArray('.info-card').forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 85%',
+                    toggleActions: 'play none none reverse'
+                },
+                y: 80,
+                opacity: 0,
+                scale: 0.9,
+                rotation: 5,
+                duration: 1,
+                delay: i * 0.15,
+                ease: 'back.out(1.7)'
+            });
+            
+            // Animate icon separately for extra effect
+            gsap.from(card.querySelector('.info-icon'), {
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 85%'
+                },
+                scale: 0,
+                rotation: 360,
+                duration: 0.8,
+                delay: i * 0.15 + 0.3,
+                ease: 'elastic.out(1, 0.5)'
+            });
+        });
+
+        // Mobile menu
+        document.getElementById('navToggle').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // ===== THEME TOGGLE =====
+        const themeToggle = document.getElementById('themeToggle');
+        const sunIcon = themeToggle.querySelector('.sun-icon');
+        const moonIcon = themeToggle.querySelector('.moon-icon');
+        
+        // Check for saved theme preference
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        if (currentTheme === 'light') {
+            document.body.classList.add('light-theme');
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'block';
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+            
+            if (document.body.classList.contains('light-theme')) {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+                localStorage.setItem('theme', 'light');
+            } else {
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // ===== CHATBOT FUNCTIONALITY =====
+        const chatbotToggle = document.getElementById('chatbotToggle');
+        const chatbotWindow = document.getElementById('chatbotWindow');
+        const chatbotClose = document.getElementById('chatbotClose');
+        const chatbotMessages = document.getElementById('chatbotMessages');
+        const chatbotInput = document.getElementById('chatbotInput');
+        const chatbotSend = document.getElementById('chatbotSend');
+        
+        // Toggle chatbot
+        chatbotToggle.addEventListener('click', () => {
+            chatbotWindow.classList.add('active');
+        });
+        
+        chatbotClose.addEventListener('click', () => {
+            chatbotWindow.classList.remove('active');
+        });
+        
+        // Quick options
+        document.querySelectorAll('.quick-option').forEach(option => {
+            option.addEventListener('click', () => {
+                const message = option.dataset.msg;
+                sendMessage(message);
+            });
+        });
+        
+        // Send message
+        function sendMessage(text = null) {
+            const message = text || chatbotInput.value.trim();
+            if (!message) return;
+            
+            // Add user message
+            const userMsg = document.createElement('div');
+            userMsg.className = 'chatbot-message user';
+            userMsg.textContent = message;
+            chatbotMessages.appendChild(userMsg);
+            
+            chatbotInput.value = '';
+            
+            // Scroll to bottom
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            
+            // Bot response after delay
+            setTimeout(() => {
+                const botMsg = document.createElement('div');
+                botMsg.className = 'chatbot-message bot';
+                botMsg.textContent = getBotResponse(message);
+                chatbotMessages.appendChild(botMsg);
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            }, 500);
+        }
+        
+        // Bot responses
+        function getBotResponse(message) {
+            const msg = message.toLowerCase();
+            
+            if (msg.includes('course') || msg.includes('class')) {
+                return 'We offer courses for grades 5th to 12th in all subjects including Math, Science, English, and more. Visit our Courses page for details!';
+            } else if (msg.includes('fee') || msg.includes('price') || msg.includes('cost')) {
+                return 'Our fee structure varies by grade and course. Please contact us at +91 9024401590 or visit our Contact page for detailed information.';
+            } else if (msg.includes('enroll') || msg.includes('admission') || msg.includes('join')) {
+                return 'You can enroll by clicking the "Book Now" button or visiting our Booking page. You can also call us at +91 9024401590.';
+            } else if (msg.includes('contact') || msg.includes('phone') || msg.includes('address')) {
+                return 'Contact us at +91 9024401590 or visit our Contact page for our address and other details. We are located in Jaipur, Rajasthan.';
+            } else if (msg.includes('time') || msg.includes('schedule') || msg.includes('timing')) {
+                return 'Our classes run from 6 AM to 9 PM with flexible batch timings. Contact us to find a schedule that works for you!';
+            } else if (msg.includes('result') || msg.includes('success')) {
+                return 'We have a 95% success rate in board examinations! Check our Results page to see our students\' achievements.';
+            } else if (msg.includes('teacher') || msg.includes('faculty')) {
+                return 'Our teachers are highly qualified with 10+ years of experience. Check the Teachers section on our homepage to meet them!';
+            } else if (msg.includes('hello') || msg.includes('hi') || msg.includes('hey')) {
+                return 'Hello! How can I assist you today? Feel free to ask about courses, fees, enrollment, or anything else!';
+            } else {
+                return 'Thank you for your question! For detailed information, please call us at +91 9024401590 or visit our Contact page. Our team will be happy to help!';
+            }
+        }
+        
+        chatbotSend.addEventListener('click', () => sendMessage());
+        chatbotInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+    </script>
+</body>
+</html>

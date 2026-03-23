@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - Rudraksh Academy</title>
+    <meta name="description" content="Discover the premium features that make Rudraksh Academy the best choice">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 3D Background Canvas -->
+    <canvas id="bg3d"></canvas>
+
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <i class="fas fa-graduation-cap loader-icon"></i>
+            <div class="loader-spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Rudraksh Academy</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="courses.html" class="nav-link">Courses</a>
+                <a href="features.html" class="nav-link active">Features</a>
+                <a href="results.html" class="nav-link">Results</a>
+                <a href="booking.html" class="nav-link">Book Now</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <a href="booking.html" class="nav-cta">Enroll Now</a>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header - FEATURES PAGE ONLY -->
+    <section class="page-header">
+        <div class="container">
+            <h1>
+                <span style="background: linear-gradient(135deg, var(--primary-blue), var(--gold)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Premium Features</span>
+            </h1>
+            <p>Everything you need for academic success</p>
+        </div>
+    </section>
+
+    <!-- Features Section - FEATURES PAGE ONLY -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Expert Faculty</h3>
+                    <p>Highly qualified teachers with 10+ years of experience dedicated to student success</p>
+                </div>
+
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3>Regular Mock Tests</h3>
+                    <p>Weekly tests and assessments to track progress and improve performance</p>
+                </div>
+
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Personal Attention</h3>
+                    <p>Individual focus on each student's strengths and weaknesses</p>
+                </div>
+
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Small Batches</h3>
+                    <p>Limited batch sizes ensuring quality education and better interaction</p>
+                </div>
+
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>CCTV Classes</h3>
+                    <p>Monitored classrooms for safety and quality assurance</p>
+                </div>
+
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Study Material</h3>
+                    <p>Comprehensive and updated study materials for all subjects</p>
+                </div>
+
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <h3>AC Classrooms</h3>
+                    <p>Comfortable air-conditioned learning environment year-round</p>
+                </div>
+
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Digital Learning</h3>
+                    <p>Modern teaching aids and digital resources for enhanced learning</p>
+                </div>
+
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Doubt Sessions</h3>
+                    <p>Dedicated doubt clearing sessions for complete understanding</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section - FEATURES PAGE ONLY -->
+    <section class="quick-info" style="padding-top: 2rem;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Infrastructure</span>
+                <h2 class="section-title">World-Class Facilities</h2>
+            </div>
+            <div class="info-grid">
+                <div class="info-card glass-card">
+                    <div class="info-icon" style="background: linear-gradient(135deg, var(--gold), var(--gold-light));">
+                        <i class="fas fa-building" style="color: var(--bg-dark);"></i>
+                    </div>
+                    <h3>Modern Infrastructure</h3>
+                    <p>State-of-the-art classrooms with latest teaching technology</p>
+                </div>
+                <div class="info-card glass-card">
+                    <div class="info-icon" style="background: linear-gradient(135deg, var(--gold), var(--gold-light));">
+                        <i class="fas fa-flask" style="color: var(--bg-dark);"></i>
+                    </div>
+                    <h3>Science Labs</h3>
+                    <p>Well-equipped laboratories for practical sessions</p>
+                </div>
+                <div class="info-card glass-card">
+                    <div class="info-icon" style="background: linear-gradient(135deg, var(--gold), var(--gold-light));">
+                        <i class="fas fa-wifi" style="color: var(--bg-dark);"></i>
+                    </div>
+                    <h3>WiFi Campus</h3>
+                    <p>High-speed internet for digital learning resources</p>
+                </div>
+            </div>
+            <div class="cta-center">
+                <a href="contact.html" class="btn btn-primary">
+                    <span>Experience Excellence</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Rudraksh Academy</span>
+                </div>
+                <p>Beyond Imagination - Premier Coaching</p>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="courses.html">Courses</a>
+                    <a href="features.html">Features</a>
+                    <a href="results.html">Results</a>
+                    <a href="booking.html">Book Now</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <p class="copyright">&copy; 2026 Rudraksh Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle" id="themeToggle">
+        <i class="fas fa-sun sun-icon"></i>
+        <i class="fas fa-moon moon-icon" style="display: none;"></i>
+    </div>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919983906474" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Chatbot Toggle -->
+    <div class="chatbot-toggle" id="chatbotToggle">
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <!-- Chatbot Window -->
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header">
+            <h3>Support Chat</h3>
+            <button class="chatbot-close" id="chatbotClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="chatbot-message bot">
+                Hello! 👋 Welcome to Rudraksh Academy. How can I help you today?
+            </div>
+            <div class="quick-options">
+                <div class="quick-option" data-msg="I want to know about courses">Courses Info</div>
+                <div class="quick-option" data-msg="What are the fees?">Fee Structure</div>
+                <div class="quick-option" data-msg="How to enroll?">Enrollment</div>
+                <div class="quick-option" data-msg="Contact details?">Contact Us</div>
+            </div>
+        </div>
+        <div class="chatbot-input-area">
+            <input type="text" id="chatbotInput" placeholder="Type your message...">
+            <button class="chatbot-send" id="chatbotSend">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="common.js"></script>
+    <script>
+        // ===== FEATURES.HTML - ORBIT ANIMATION (ELECTRONS) 3D BACKGROUND =====
+        
+        const canvas = document.getElementById('bg3d');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        camera.position.z = 8;
+
+        // Central glowing core
+        const coreGeometry = new THREE.SphereGeometry(0.8, 32, 32);
+        const coreMaterial = new THREE.MeshBasicMaterial({
+            color: 0xfbbf24,
+            transparent: true,
+            opacity: 0.9
+        });
+        const core = new THREE.Mesh(coreGeometry, coreMaterial);
+        scene.add(core);
+
+        // Glowing ring around core
+        const glowGeometry = new THREE.RingGeometry(0.9, 1.2, 64);
+        const glowMaterial = new THREE.MeshBasicMaterial({
+            color: 0xfbbf24,
+            transparent: true,
+            opacity: 0.3,
+            side: THREE.DoubleSide
+        });
+        const glow = new THREE.Mesh(glowGeometry, glowMaterial);
+        scene.add(glow);
+
+        // Orbiting electrons
+        const orbits = [];
+        const orbitColors = [0x3b82f6, 0x60a5fa, 0xfbbf24, 0x3b82f6, 0x60a5fa];
+        const orbitRadii = [2, 3, 4, 5, 6];
+        const orbitSpeeds = [0.02, 0.015, 0.012, 0.01, 0.008];
+        const orbitTilts = [0, Math.PI / 6, Math.PI / 3, Math.PI / 4, Math.PI / 5];
+
+        for(let i = 0; i < 5; i++) {
+            const orbitGroup = new THREE.Group();
+            
+            // Orbit ring
+            const ringGeometry = new THREE.TorusGeometry(orbitRadii[i], 0.02, 16, 100);
+            const ringMaterial = new THREE.MeshBasicMaterial({
+                color: orbitColors[i],
+                transparent: true,
+                opacity: 0.3
+            });
+            const ring = new THREE.Mesh(ringGeometry, ringMaterial);
+            ring.rotation.x = Math.PI / 2;
+            orbitGroup.add(ring);
+            
+            // Electrons on this orbit
+            const electronCount = 2 + i;
+            const electrons = [];
+            for(let j = 0; j < electronCount; j++) {
+                const electronGeometry = new THREE.SphereGeometry(0.1, 16, 16);
+                const electronMaterial = new THREE.MeshBasicMaterial({
+                    color: orbitColors[i],
+                    transparent: true,
+                    opacity: 0.9
+                });
+                const electron = new THREE.Mesh(electronGeometry, electronMaterial);
+                
+                // Trail for electron
+                const trailGeometry = new THREE.SphereGeometry(0.05, 8, 8);
+                const trailMaterial = new THREE.MeshBasicMaterial({
+                    color: orbitColors[i],
+                    transparent: true,
+                    opacity: 0.4
+                });
+                const trail = new THREE.Mesh(trailGeometry, trailMaterial);
+                
+                electrons.push({
+                    mesh: electron,
+                    trail: trail,
+                    angle: (Math.PI * 2 / electronCount) * j,
+                    radius: orbitRadii[i]
+                });
+                orbitGroup.add(electron);
+                orbitGroup.add(trail);
+            }
+            
+            orbitGroup.rotation.x = orbitTilts[i];
+            orbitGroup.rotation.z = i * 0.3;
+            
+            orbits.push({
+                group: orbitGroup,
+                electrons: electrons,
+                speed: orbitSpeeds[i]
+            });
+            scene.add(orbitGroup);
+        }
+
+        // Background particles
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesCount = 300;
+        const posArray = new Float32Array(particlesCount * 3);
+        
+        for(let i = 0; i < particlesCount * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 30;
+        }
+        
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        const particlesMaterial = new THREE.PointsMaterial({
+            size: 0.02,
+            color: 0x60a5fa,
+            transparent: true,
+            opacity: 0.4
+        });
+        const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particles);
+
+        // Mouse movement
+        let mouseX = 0, mouseY = 0;
+        document.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+            mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+        });
+
+        // Scroll progress tracker
+        let scrollProgress = 0;
+        window.addEventListener('scroll', () => {
+            scrollProgress = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+        });
+
+        // Animation with scroll evolution - Orbits accelerate
+        let time = 0;
+        function animate() {
+            requestAnimationFrame(animate);
+            time += 0.01 + scrollProgress * 0.02;
+            
+            // Core pulses faster on scroll
+            const pulseSpeed = 2 + scrollProgress * 3;
+            const scale = 1 + Math.sin(time * pulseSpeed) * (0.1 + scrollProgress * 0.2);
+            core.scale.set(scale, scale, scale);
+            glow.rotation.z += 0.005 + scrollProgress * 0.01;
+            
+            // Orbits spin faster on scroll
+            orbits.forEach((orbit, i) => {
+                const speedMultiplier = 1 + scrollProgress * 3;
+                orbit.group.rotation.y += orbit.speed * speedMultiplier;
+                
+                orbit.electrons.forEach((e, j) => {
+                    e.angle += orbit.speed * speedMultiplier;
+                    e.mesh.position.x = Math.cos(e.angle) * e.radius;
+                    e.mesh.position.z = Math.sin(e.angle) * e.radius;
+                    
+                    // Trail follows electron
+                    e.trail.position.x = Math.cos(e.angle - 0.2) * e.radius;
+                    e.trail.position.z = Math.sin(e.angle - 0.2) * e.radius;
+                    
+                    // Electrons glow brighter on scroll
+                    e.mesh.material.opacity = 0.8 + scrollProgress * 0.2;
+                });
+            });
+            
+            // Particles rotate faster on scroll
+            const particleSpeed = 0.0003 + scrollProgress * 0.002;
+            particles.rotation.y += particleSpeed;
+            particles.rotation.x += particleSpeed * 0.3;
+            
+            // Camera zooms in on scroll
+            const targetZ = 8 - scrollProgress * 2;
+            camera.position.x += (mouseX * 5 - camera.position.x) * 0.08;
+            camera.position.y += (mouseY * 4 - camera.position.y) * 0.08;
+            camera.position.z += (targetZ - camera.position.z) * 0.05;
+            camera.lookAt(scene.position);
+            
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Resize handler
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // ===== GSAP ANIMATIONS =====
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hide loader
+        window.addEventListener('load', () => {
+            gsap.to('#loader', { opacity: 0, duration: 0.5, delay: 0.8, onComplete: () => {
+                document.getElementById('loader').style.display = 'none';
+            }});
+        });
+
+        // Page header animation
+        gsap.from('.page-header h1', { y: 50, opacity: 0, duration: 1, delay: 1 });
+        gsap.from('.page-header p', { y: 30, opacity: 0, duration: 1, delay: 1.2 });
+
+        // Feature cards animation
+        gsap.utils.toArray('.feature-card').forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: { trigger: card, start: 'top 85%' },
+                y: 60, opacity: 0, duration: 0.8, delay: i * 0.08,
+                scale: 0.9
+            });
+        });
+
+        // Info cards animation
+        gsap.utils.toArray('.info-card').forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: { trigger: card, start: 'top 85%' },
+                y: 60, opacity: 0, duration: 0.8, delay: i * 0.1
+            });
+        });
+
+        // Mobile menu
+        document.getElementById('navToggle').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

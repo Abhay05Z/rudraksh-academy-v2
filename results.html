@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - Rudraksh Academy</title>
+    <meta name="description" content="See our outstanding results and student achievements">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 3D Background Canvas -->
+    <canvas id="bg3d"></canvas>
+
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <i class="fas fa-graduation-cap loader-icon"></i>
+            <div class="loader-spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Rudraksh Academy</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="courses.html" class="nav-link">Courses</a>
+                <a href="features.html" class="nav-link">Features</a>
+                <a href="results.html" class="nav-link active">Results</a>
+                <a href="booking.html" class="nav-link">Book Now</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <a href="booking.html" class="nav-cta">Enroll Now</a>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>
+                <span style="background: linear-gradient(135deg, var(--primary-blue), var(--gold)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Our Results</span>
+            </h1>
+            <p>Proven track record of excellence</p>
+        </div>
+    </section>
+
+    <!-- Success Stats -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card glass-card">
+                    <div class="stat-number" data-count="95">0</div>
+                    <div class="stat-label">Success Rate %</div>
+                </div>
+                <div class="stat-card glass-card">
+                    <div class="stat-number" data-count="500">0</div>
+                    <div class="stat-label">Students Taught</div>
+                </div>
+                <div class="stat-card glass-card">
+                    <div class="stat-number" data-count="90">0</div>
+                    <div class="stat-label">Above 90% Scores</div>
+                </div>
+                <div class="stat-card glass-card">
+                    <div class="stat-number" data-count="100">0</div>
+                    <div class="stat-label">Board Toppers</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements -->
+    <section class="quick-info">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Achievements</span>
+                <h2 class="section-title">Student Success Stories</h2>
+            </div>
+            <div class="info-grid">
+                <div class="info-card glass-card">
+                    <div class="info-icon" style="background: linear-gradient(135deg, var(--gold), var(--gold-light));">
+                        <i class="fas fa-trophy" style="color: var(--bg-dark);"></i>
+                    </div>
+                    <h3>Board Toppers</h3>
+                    <p>Multiple students scoring 95%+ in board exams every year</p>
+                </div>
+                <div class="info-card glass-card">
+                    <div class="info-icon" style="background: linear-gradient(135deg, var(--gold), var(--gold-light));">
+                        <i class="fas fa-medal" style="color: var(--bg-dark);"></i>
+                    </div>
+                    <h3>Competitive Success</h3>
+                    <p>Students clearing JEE, NEET, and other competitive exams</p>
+                </div>
+                <div class="info-card glass-card">
+                    <div class="info-icon" style="background: linear-gradient(135deg, var(--gold), var(--gold-light));">
+                        <i class="fas fa-star" style="color: var(--bg-dark);"></i>
+                    </div>
+                    <h3>Consistent Excellence</h3>
+                    <p>8+ years of delivering outstanding academic results</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Testimonials</span>
+                <h2 class="section-title">What Students Say</h2>
+            </div>
+            <div class="courses-grid">
+                <div class="glass-card" style="padding: 2.5rem;">
+                    <div style="color: var(--gold); font-size: 2rem; margin-bottom: 1rem;">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p style="color: var(--text-gray); font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                        "Best coaching institute in Jaipur! The teachers are highly experienced and the study material is excellent. I scored 94% in boards thanks to Rudraksh Academy."
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary-blue), var(--gold)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700;">
+                            RS
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 0.25rem;">Rahul Sharma</h4>
+                            <p style="color: var(--text-gray); font-size: 0.9rem;">Class 10th - 94%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card" style="padding: 2.5rem;">
+                    <div style="color: var(--gold); font-size: 2rem; margin-bottom: 1rem;">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p style="color: var(--text-gray); font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                        "The Chemistry coaching here is outstanding. Small batch size ensures personal attention. Highly recommend for 11th-12th students."
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary-blue), var(--gold)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700;">
+                            PG
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 0.25rem;">Priya Gupta</h4>
+                            <p style="color: var(--text-gray); font-size: 0.9rem;">Class 12th - Chemistry</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card" style="padding: 2.5rem;">
+                    <div style="color: var(--gold); font-size: 2rem; margin-bottom: 1rem;">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p style="color: var(--text-gray); font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                        "My son's grades improved dramatically after joining Rudraksh Academy. The faculty is dedicated and the environment is excellent."
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary-blue), var(--gold)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700;">
+                            AV
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 0.25rem;">Amit Verma</h4>
+                            <p style="color: var(--text-gray); font-size: 0.9rem;">Parent - Class 9th Student</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cta-center" style="margin-top: 3rem;">
+                <a href="admissions.html" class="btn btn-primary">
+                    <span>Join Our Success Story</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Rudraksh Academy</span>
+                </div>
+                <p>Beyond Imagination - Premier Coaching</p>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="courses.html">Courses</a>
+                    <a href="features.html">Features</a>
+                    <a href="results.html">Results</a>
+                    <a href="booking.html">Book Now</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <p class="copyright">&copy; 2026 Rudraksh Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle" id="themeToggle">
+        <i class="fas fa-sun sun-icon"></i>
+        <i class="fas fa-moon moon-icon" style="display: none;"></i>
+    </div>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919983906474" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Chatbot Toggle -->
+    <div class="chatbot-toggle" id="chatbotToggle">
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <!-- Chatbot Window -->
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header">
+            <h3>Support Chat</h3>
+            <button class="chatbot-close" id="chatbotClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="chatbot-message bot">
+                Hello! 👋 Welcome to Rudraksh Academy. How can I help you today?
+            </div>
+            <div class="quick-options">
+                <div class="quick-option" data-msg="I want to know about courses">Courses Info</div>
+                <div class="quick-option" data-msg="What are the fees?">Fee Structure</div>
+                <div class="quick-option" data-msg="How to enroll?">Enrollment</div>
+                <div class="quick-option" data-msg="Contact details?">Contact Us</div>
+            </div>
+        </div>
+        <div class="chatbot-input-area">
+            <input type="text" id="chatbotInput" placeholder="Type your message...">
+            <button class="chatbot-send" id="chatbotSend">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="common.js"></script>
+    <script>
+        // ===== RESULTS.HTML - RISING STARS & TROPHY PARTICLES 3D BACKGROUND =====
+        
+        const canvas = document.getElementById('bg3d');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        camera.position.z = 10;
+
+        // Rising star particles
+        const stars = [];
+        for(let i = 0; i < 50; i++) {
+            const geometry = new THREE.SphereGeometry(0.1, 5, 5);
+            const material = new THREE.MeshBasicMaterial({
+                color: i % 2 === 0 ? 0xfbbf24 : 0xfcd34d,
+                transparent: true,
+                opacity: 0.8
+            });
+            const star = new THREE.Mesh(geometry, material);
+            
+            star.position.set(
+                (Math.random() - 0.5) * 20,
+                Math.random() * -15,
+                (Math.random() - 0.5) * 10
+            );
+            
+            stars.push({
+                mesh: star,
+                speed: 0.02 + Math.random() * 0.03,
+                resetY: -15
+            });
+            scene.add(star);
+        }
+
+        // Trophy/medal shapes
+        const trophies = [];
+        for(let i = 0; i < 8; i++) {
+            const geometry = new THREE.ConeGeometry(0.3, 0.6, 6);
+            const material = new THREE.MeshBasicMaterial({
+                color: 0xfbbf24,
+                wireframe: true,
+                transparent: true,
+                opacity: 0.5
+            });
+            const trophy = new THREE.Mesh(geometry, material);
+            
+            trophy.position.set(
+                (Math.random() - 0.5) * 18,
+                (Math.random() - 0.5) * 12,
+                (Math.random() - 0.5) * 8
+            );
+            trophy.rotation.set(
+                Math.random() * Math.PI,
+                Math.random() * Math.PI,
+                0
+            );
+            
+            trophies.push({
+                mesh: trophy,
+                rotSpeed: (Math.random() - 0.5) * 0.01
+            });
+            scene.add(trophy);
+        }
+
+        // Achievement rings
+        const rings = [];
+        for(let i = 0; i < 5; i++) {
+            const geometry = new THREE.TorusGeometry(1 + i * 0.5, 0.05, 16, 100);
+            const material = new THREE.MeshBasicMaterial({
+                color: 0x3b82f6,
+                transparent: true,
+                opacity: 0.2
+            });
+            const ring = new THREE.Mesh(geometry, material);
+            ring.rotation.x = Math.PI / 2;
+            rings.push(ring);
+            scene.add(ring);
+        }
+
+        // Sparkle particles
+        const sparklesGeo = new THREE.BufferGeometry();
+        const sparklesCount = 300;
+        const posArray = new Float32Array(sparklesCount * 3);
+        
+        for(let i = 0; i < sparklesCount * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 25;
+        }
+        
+        sparklesGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        const sparklesMat = new THREE.PointsMaterial({
+            size: 0.02,
+            color: 0xfbbf24,
+            transparent: true,
+            opacity: 0.6
+        });
+        const sparkles = new THREE.Points(sparklesGeo, sparklesMat);
+        scene.add(sparkles);
+
+        // Mouse movement
+        let mouseX = 0, mouseY = 0;
+        document.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+            mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+        });
+
+        // Scroll progress tracker
+        let scrollProgress = 0;
+        window.addEventListener('scroll', () => {
+            scrollProgress = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+        });
+
+        // Animation with scroll evolution - Victory celebration intensifies
+        let time = 0;
+        function animate() {
+            requestAnimationFrame(animate);
+            time += 0.01 + scrollProgress * 0.02;
+            
+            // Stars rise faster on scroll
+            stars.forEach(star => {
+                const speedMultiplier = 1 + scrollProgress * 2;
+                star.mesh.position.y += star.speed * speedMultiplier;
+                if(star.mesh.position.y > 15) {
+                    star.mesh.position.y = star.resetY;
+                    star.mesh.position.x = (Math.random() - 0.5) * 20;
+                }
+                star.mesh.rotation.z += 0.02 * speedMultiplier;
+                
+                // Stars glow brighter on scroll
+                star.mesh.material.opacity = 0.8 + scrollProgress * 0.2;
+            });
+            
+            // Trophies spin faster on scroll
+            trophies.forEach(trophy => {
+                const spinSpeed = 1 + scrollProgress * 2;
+                trophy.mesh.rotation.y += trophy.rotSpeed * spinSpeed;
+                trophy.mesh.position.y += Math.sin(time + trophy.mesh.position.x) * 0.002;
+                
+                // Trophies scale larger on scroll
+                const scale = 1 + scrollProgress * 0.3;
+                trophy.mesh.scale.set(scale, scale, scale);
+            });
+            
+            // Rings pulse faster on scroll
+            rings.forEach((ring, i) => {
+                const pulseSpeed = 2 + scrollProgress * 3;
+                const scale = 1 + Math.sin(time * pulseSpeed + i * 0.5) * (0.1 + scrollProgress * 0.15);
+                ring.scale.set(scale, scale, scale);
+                ring.rotation.z += 0.001 + scrollProgress * 0.003;
+            });
+            
+            // Sparkles rotate faster on scroll
+            sparkles.rotation.y += 0.0005 + scrollProgress * 0.002;
+            
+            // Camera zooms in on scroll
+            const targetZ = 10 - scrollProgress * 2.5;
+            camera.position.x += (mouseX * 5 - camera.position.x) * 0.08;
+            camera.position.y += (mouseY * 4 - camera.position.y) * 0.08;
+            camera.position.z += (targetZ - camera.position.z) * 0.05;
+            camera.lookAt(scene.position);
+            
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Resize handler
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // ===== GSAP ANIMATIONS =====
+        gsap.registerPlugin(ScrollTrigger);
+
+        window.addEventListener('load', () => {
+            gsap.to('#loader', { opacity: 0, duration: 0.5, delay: 0.8, onComplete: () => {
+                document.getElementById('loader').style.display = 'none';
+            }});
+        });
+
+        gsap.from('.page-header h1', { y: 50, opacity: 0, duration: 1, delay: 1 });
+        gsap.from('.page-header p', { y: 30, opacity: 0, duration: 1, delay: 1.2 });
+
+        const statNumbers = document.querySelectorAll('.stat-number');
+        statNumbers.forEach(stat => {
+            const target = parseInt(stat.dataset.count);
+            gsap.to(stat, {
+                scrollTrigger: { trigger: stat, start: 'top 80%' },
+                innerHTML: target,
+                duration: 2,
+                snap: { innerHTML: 1 }
+            });
+        });
+
+        gsap.utils.toArray('.info-card, .glass-card').forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: { trigger: card, start: 'top 85%' },
+                y: 60, opacity: 0, duration: 0.8, delay: i * 0.1
+            });
+        });
+
+        document.getElementById('navToggle').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

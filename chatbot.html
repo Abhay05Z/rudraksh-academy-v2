@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Assistant - Rudraksh Academy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 3D Background Canvas -->
+    <canvas id="bg3d"></canvas>
+
+    <!-- Chatbot Page -->
+    <div class="chatbot-page">
+        <div class="chatbot-header">
+            <div class="chatbot-header-left">
+                <a href="index.html" class="chatbot-back">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Back to Website</span>
+                </a>
+                <div class="chatbot-avatar">
+                    <img src="images/logo.png" alt="Rudraksh Academy">
+                </div>
+                <div class="chatbot-info">
+                    <h3>Rudraksh Academy Assistant</h3>
+                    <div class="chatbot-status">
+                        <span class="status-dot"></span>
+                        <span>Online - Ready to help</span>
+                    </div>
+                </div>
+            </div>
+            <a href="index.html" class="chatbot-close">
+                <i class="fas fa-times"></i>
+            </a>
+        </div>
+        
+        <div class="chatbot-content">
+            <!-- Sidebar -->
+            <div class="chatbot-sidebar">
+                <h4>Rudraksh Academy Assistant</h4>
+                <p>I'm here to help you with enrollment, course information, timings, faculty details, and location. Ask me anything!</p>
+                
+                <div class="sidebar-actions">
+                    <button class="sidebar-btn" data-action="I want to enroll">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Enroll</span>
+                    </button>
+                    <button class="sidebar-btn" data-action="What are your timings?">
+                        <i class="fas fa-clock"></i>
+                        <span>Timings</span>
+                    </button>
+                    <button class="sidebar-btn" data-action="Tell me about your courses">
+                        <i class="fas fa-book"></i>
+                        <span>Courses</span>
+                    </button>
+                    <button class="sidebar-btn" data-action="Tell me about your faculty">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <span>Faculty</span>
+                    </button>
+                    <button class="sidebar-btn" data-action="Where is your location?">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Location</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Main Chat Area -->
+            <div class="chatbot-main">
+                <div class="chatbot-messages" id="chatbotMessages">
+                    <div class="chatbot-message bot">
+                        Hello! 👋 I'm your AI assistant at Rudraksh Academy. I'm here to help you with:
+                    </div>
+                    <div class="quick-options">
+                        <div class="quick-option" data-msg="I want to enroll">📝 Enrollment</div>
+                        <div class="quick-option" data-msg="What are your timings?">🕐 Timings</div>
+                        <div class="quick-option" data-msg="Tell me about your courses">📚 Courses</div>
+                        <div class="quick-option" data-msg="Tell me about your faculty">👨‍🏫 Faculty</div>
+                        <div class="quick-option" data-msg="Where is your location?">📍 Location</div>
+                    </div>
+                    <div class="chatbot-message bot">
+                        How can I assist you today?
+                    </div>
+                </div>
+                
+                <div class="chatbot-input-area">
+                    <div class="input-wrapper">
+                        <button class="attach-btn" id="attachBtn" title="Attach file">
+                            <i class="fas fa-paperclip"></i>
+                        </button>
+                        <input type="file" id="fileInput" accept="image/*,.pdf,.doc,.docx">
+                        <input type="text" id="chatbotInput" placeholder="Type your message here... (Press Enter to send)">
+                    </div>
+                    <button class="chatbot-send" id="chatbotSend">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        // ===== CHATBOT PAGE - SIMPLE PARTICLES BACKGROUND =====
+        
+        const canvas = document.getElementById('bg3d');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        camera.position.z = 8;
+
+        // Particles
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesCount = 2000;
+        const posArray = new Float32Array(particlesCount * 3);
+        
+        for (let i = 0; i < particlesCount * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 20;
+        }
+        
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        
+        const particlesMaterial = new THREE.PointsMaterial({
+            size: 0.03,
+            color: 0x3b82f6,
+            transparent: true,
+            opacity: 0.6
+        });
+        
+        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particlesMesh);
+
+        // Animation
+        function animate() {
+            requestAnimationFrame(animate);
+            particlesMesh.rotation.y += 0.0005;
+            particlesMesh.rotation.x += 0.0002;
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Resize handler
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // ===== CHATBOT FUNCTIONALITY =====
+        const chatbotMessages = document.getElementById('chatbotMessages');
+        const chatbotInput = document.getElementById('chatbotInput');
+        const chatbotSend = document.getElementById('chatbotSend');
+        const attachBtn = document.getElementById('attachBtn');
+        const fileInput = document.getElementById('fileInput');
+        
+        // Sidebar buttons
+        document.querySelectorAll('.sidebar-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const action = btn.dataset.action;
+                sendMessage(action);
+            });
+        });
+        
+        // Quick options
+        document.querySelectorAll('.quick-option').forEach(option => {
+            option.addEventListener('click', () => {
+                const message = option.dataset.msg;
+                sendMessage(message);
+            });
+        });
+        
+        // File upload
+        attachBtn.addEventListener('click', () => {
+            fileInput.click();
+        });
+        
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                const fileName = e.target.files[0].name;
+                
+                const userMsg = document.createElement('div');
+                userMsg.className = 'chatbot-message user';
+                userMsg.innerHTML = `📎 Uploaded: ${fileName}`;
+                chatbotMessages.appendChild(userMsg);
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+                
+                setTimeout(() => {
+                    const botMsg = document.createElement('div');
+                    botMsg.className = 'chatbot-message bot';
+                    botMsg.textContent = 'Thank you for sharing the file! Our team will review it and get back to you shortly. Is there anything else I can help you with?';
+                    chatbotMessages.appendChild(botMsg);
+                    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+                }, 1000);
+                
+                fileInput.value = '';
+            }
+        });
+        
+        // Send message
+        function sendMessage(text = null) {
+            const message = text || chatbotInput.value.trim();
+            if (!message) return;
+            
+            // Remove quick options after first message
+            const quickOptions = chatbotMessages.querySelector('.quick-options');
+            if (quickOptions) {
+                quickOptions.style.animation = 'fadeOut 0.3s ease';
+                setTimeout(() => quickOptions.remove(), 300);
+            }
+            
+            // Add user message with animation
+            const userMsg = document.createElement('div');
+            userMsg.className = 'chatbot-message user';
+            userMsg.textContent = message;
+            userMsg.style.opacity = '0';
+            chatbotMessages.appendChild(userMsg);
+            
+            // Animate user message
+            setTimeout(() => {
+                userMsg.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                userMsg.style.opacity = '1';
+            }, 10);
+            
+            chatbotInput.value = '';
+            
+            // Scroll to bottom
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            
+            // Show typing indicator
+            const typingIndicator = document.createElement('div');
+            typingIndicator.className = 'typing-indicator';
+            typingIndicator.innerHTML = '<span></span><span></span><span></span>';
+            chatbotMessages.appendChild(typingIndicator);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            
+            // Bot response after delay
+            setTimeout(() => {
+                typingIndicator.remove();
+                
+                const botMsg = document.createElement('div');
+                botMsg.className = 'chatbot-message bot';
+                botMsg.textContent = getBotResponse(message);
+                botMsg.style.opacity = '0';
+                chatbotMessages.appendChild(botMsg);
+                
+                // Animate bot message
+                setTimeout(() => {
+                    botMsg.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                    botMsg.style.opacity = '1';
+                }, 10);
+                
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            }, 1500);
+        }
+        
+        // Bot responses
+        function getBotResponse(message) {
+            const msg = message.toLowerCase();
+            
+            if (msg.includes('enroll') || msg.includes('admission') || msg.includes('join')) {
+                return 'Great! To enroll at Rudraksh Academy, you can visit our Booking page or call us at +91 9024401590. We offer flexible enrollment throughout the year with special discounts for early registrations!';
+            } else if (msg.includes('timing') || msg.includes('time') || msg.includes('schedule')) {
+                return 'Our classes run from 6 AM to 9 PM with flexible batch timings:\n\n• Morning Batch: 6 AM - 8 AM\n• Day Batch: 10 AM - 2 PM\n• Evening Batch: 4 PM - 7 PM\n• Night Batch: 7 PM - 9 PM\n\nContact us to find a schedule that works for you!';
+            } else if (msg.includes('course') || msg.includes('class') || msg.includes('subject')) {
+                return 'We offer comprehensive courses for grades 5th to 12th:\n\n📚 Subjects: Math, Science, English, Social Studies, Computer Science\n🎯 Special Programs: Board Exam Preparation, Competitive Exam Coaching\n💡 Features: Small batches, personalized attention, regular tests\n\nVisit our Courses page for detailed information!';
+            } else if (msg.includes('faculty') || msg.includes('teacher') || msg.includes('staff')) {
+                return 'Our expert faculty includes:\n\n👨‍🏫 Highly qualified teachers with 10+ years experience\n🎓 Subject matter experts from top universities\n🏆 Proven track record of student success\n💼 Regular training and development\n\nVisit our Gallery page to meet our teachers and see their qualifications!';
+            } else if (msg.includes('location') || msg.includes('address') || msg.includes('where')) {
+                return 'We are located in Jaipur, Rajasthan.\n\n📍 Address: Rudraksh Academy, Jaipur\n📞 Phone: +91 9024401590\n🚗 Easy access by public transport\n\nVisit our Contact page for detailed directions and a map!';
+            } else if (msg.includes('fee') || msg.includes('price') || msg.includes('cost')) {
+                return 'Our fee structure is competitive and varies by grade and course:\n\n💰 Affordable monthly/quarterly/yearly plans\n🎁 Special discounts for early enrollment\n📦 Complete study material included\n\nPlease contact us at +91 9024401590 for detailed fee information!';
+            } else if (msg.includes('hello') || msg.includes('hi') || msg.includes('hey')) {
+                return 'Hello! 👋 How can I assist you today? Feel free to ask about enrollment, timings, courses, faculty, or our location!';
+            } else {
+                return 'Thank you for your question! For detailed information, please call us at +91 9024401590 or visit our Contact page. Our team will be happy to help you!';
+            }
+        }
+        
+        chatbotSend.addEventListener('click', () => sendMessage());
+        chatbotInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        // Page entrance animation
+        gsap.from('.chatbot-page', {
+            opacity: 0,
+            scale: 0.95,
+            duration: 0.5,
+            ease: 'power2.out'
+        });
+    </script>
+</body>
+</html>

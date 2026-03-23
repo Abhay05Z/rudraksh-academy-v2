@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Rudraksh Academy</title>
+    <meta name="description" content="Learn about Rudraksh Academy - Premier coaching institute with 8+ years of experience">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 3D Background Canvas -->
+    <canvas id="bg3d"></canvas>
+
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <i class="fas fa-graduation-cap loader-icon"></i>
+            <div class="loader-spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Rudraksh Academy</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="courses.html" class="nav-link">Courses</a>
+                <a href="features.html" class="nav-link">Features</a>
+                <a href="results.html" class="nav-link">Results</a>
+                <a href="booking.html" class="nav-link">Book Now</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <a href="booking.html" class="nav-cta">Enroll Now</a>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header - ABOUT PAGE ONLY -->
+    <section class="page-header">
+        <div class="container">
+            <h1>
+                <span style="background: linear-gradient(135deg, var(--primary-blue), var(--gold)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">About Us</span>
+            </h1>
+            <p>Building strong foundations for academic excellence</p>
+        </div>
+    </section>
+
+    <!-- About Content - ABOUT PAGE ONLY -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2>Our Mission</h2>
+                    <p>At Rudraksh Academy, we believe in creating a strong foundation for every student. Our mission is to provide quality education that goes beyond textbooks, nurturing critical thinking, problem-solving abilities, and academic excellence.</p>
+                    <p>We are committed to empowering students with knowledge, skills, and confidence to achieve their dreams and excel in their academic pursuits.</p>
+                    
+                    <h2 style="margin-top: 2rem;">Our Vision</h2>
+                    <p>To be the most trusted and result-oriented coaching institute in Jaipur, known for transforming students into confident achievers through innovative teaching methods and personalized attention.</p>
+                </div>
+                
+                <div class="glass-card">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--gold);">Our Core Values</h3>
+                    <ul class="values-list">
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <strong>Excellence</strong>
+                                <p style="color: var(--text-gray); font-size: 0.9rem;">Striving for the highest standards in education</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <strong>Integrity</strong>
+                                <p style="color: var(--text-gray); font-size: 0.9rem;">Maintaining honesty and strong moral principles</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <strong>Innovation</strong>
+                                <p style="color: var(--text-gray); font-size: 0.9rem;">Embracing modern teaching methodologies</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <div>
+                                <strong>Dedication</strong>
+                                <p style="color: var(--text-gray); font-size: 0.9rem;">Committed to every student's success</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section - ABOUT PAGE ONLY -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Achievements</span>
+                <h2 class="section-title">Success in Numbers</h2>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card glass-card">
+                    <div class="stat-number" data-count="500">0</div>
+                    <div class="stat-label">Happy Students</div>
+                </div>
+                <div class="stat-card glass-card">
+                    <div class="stat-number" data-count="95">0</div>
+                    <div class="stat-label">Success Rate %</div>
+                </div>
+                <div class="stat-card glass-card">
+                    <div class="stat-number" data-count="8">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card glass-card">
+                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-label">Expert Faculty</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us - ABOUT PAGE ONLY -->
+    <section class="quick-info">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Why Choose Us</span>
+                <h2 class="section-title">What Makes Us Different</h2>
+            </div>
+            <div class="info-grid">
+                <div class="info-card glass-card">
+                    <div class="info-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Experienced Faculty</h3>
+                    <p>Teachers with 10+ years of teaching experience and proven track record</p>
+                </div>
+                <div class="info-card glass-card">
+                    <div class="info-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Result-Oriented</h3>
+                    <p>Proven methodologies that deliver consistent results year after year</p>
+                </div>
+                <div class="info-card glass-card">
+                    <div class="info-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h3>Limited Batches</h3>
+                    <p>Maximum 25 students per batch for better attention and interaction</p>
+                </div>
+                <div class="info-card glass-card">
+                    <div class="info-icon">
+                        <i class="fas fa-book-reader"></i>
+                    </div>
+                    <h3>Modern Material</h3>
+                    <p>Updated content aligned with latest syllabus and exam patterns</p>
+                </div>
+                <div class="info-card glass-card">
+                    <div class="info-icon">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <h3>AC Classrooms</h3>
+                    <p>Comfortable learning environment year-round for better focus</p>
+                </div>
+                <div class="info-card glass-card">
+                    <div class="info-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Weekly Tests</h3>
+                    <p>Regular assessments to monitor progress and identify weak areas</p>
+                </div>
+            </div>
+            <div class="cta-center">
+                <a href="contact.html" class="btn btn-primary">
+                    <span>Join Our Success Story</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Rudraksh Academy</span>
+                </div>
+                <p>Beyond Imagination - Premier Coaching</p>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="courses.html">Courses</a>
+                    <a href="features.html">Features</a>
+                    <a href="results.html">Results</a>
+                    <a href="booking.html">Book Now</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <p class="copyright">&copy; 2026 Rudraksh Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle" id="themeToggle">
+        <i class="fas fa-sun sun-icon"></i>
+        <i class="fas fa-moon moon-icon" style="display: none;"></i>
+    </div>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919983906474" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Chatbot Toggle -->
+    <div class="chatbot-toggle" id="chatbotToggle">
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <!-- Chatbot Window -->
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header">
+            <h3>Support Chat</h3>
+            <button class="chatbot-close" id="chatbotClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="chatbot-message bot">
+                Hello! 👋 Welcome to Rudraksh Academy. How can I help you today?
+            </div>
+            <div class="quick-options">
+                <div class="quick-option" data-msg="I want to know about courses">Courses Info</div>
+                <div class="quick-option" data-msg="What are the fees?">Fee Structure</div>
+                <div class="quick-option" data-msg="How to enroll?">Enrollment</div>
+                <div class="quick-option" data-msg="Contact details?">Contact Us</div>
+            </div>
+        </div>
+        <div class="chatbot-input-area">
+            <input type="text" id="chatbotInput" placeholder="Type your message...">
+            <button class="chatbot-send" id="chatbotSend">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="common.js"></script>
+    <script>
+        // ===== ABOUT.HTML - SLOW FLOATING SHAPES 3D BACKGROUND =====
+        
+        const canvas = document.getElementById('bg3d');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        camera.position.z = 6;
+
+        // Floating Shapes - Calm, slow motion
+        const shapes = [];
+        const geometries = [
+            new THREE.IcosahedronGeometry(0.5, 0),
+            new THREE.OctahedronGeometry(0.4, 0),
+            new THREE.TetrahedronGeometry(0.5, 0),
+            new THREE.DodecahedronGeometry(0.4, 0),
+            new THREE.TorusGeometry(0.3, 0.1, 16, 100),
+            new THREE.TorusKnotGeometry(0.25, 0.08, 100, 16)
+        ];
+
+        for(let i = 0; i < 15; i++) {
+            const geometry = geometries[i % geometries.length];
+            const material = new THREE.MeshBasicMaterial({
+                color: i % 2 === 0 ? 0x3b82f6 : 0xfbbf24,
+                wireframe: true,
+                transparent: true,
+                opacity: 0.4
+            });
+            
+            const shape = new THREE.Mesh(geometry, material);
+            shape.position.set(
+                (Math.random() - 0.5) * 12,
+                (Math.random() - 0.5) * 10,
+                (Math.random() - 0.5) * 8
+            );
+            shape.rotation.set(
+                Math.random() * Math.PI,
+                Math.random() * Math.PI,
+                Math.random() * Math.PI
+            );
+            
+            shapes.push({
+                mesh: shape,
+                rotSpeed: {
+                    x: (Math.random() - 0.5) * 0.005,
+                    y: (Math.random() - 0.5) * 0.005,
+                    z: (Math.random() - 0.5) * 0.005
+                },
+                floatSpeed: 0.0005 + Math.random() * 0.001,
+                floatOffset: Math.random() * Math.PI * 2
+            });
+            scene.add(shape);
+        }
+
+        // Ambient particles
+        const particlesGeo = new THREE.BufferGeometry();
+        const particlesCount = 500;
+        const posArray = new Float32Array(particlesCount * 3);
+        
+        for(let i = 0; i < particlesCount * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 20;
+        }
+        
+        particlesGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        const particlesMat = new THREE.PointsMaterial({
+            size: 0.015,
+            color: 0x60a5fa,
+            transparent: true,
+            opacity: 0.5
+        });
+        const particles = new THREE.Points(particlesGeo, particlesMat);
+        scene.add(particles);
+
+        // Mouse movement
+        let mouseX = 0, mouseY = 0;
+        document.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+            mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+        });
+
+        // Scroll progress tracker
+        let scrollProgress = 0;
+        window.addEventListener('scroll', () => {
+            scrollProgress = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+        });
+
+        // Animation with scroll evolution - CALM to ENERGETIC
+        let time = 0;
+        function animate() {
+            requestAnimationFrame(animate);
+            time += 0.005 + scrollProgress * 0.01; // Speed increases with scroll
+            
+            // Shapes rotate faster and scale up on scroll
+            shapes.forEach((shape, i) => {
+                const speedMultiplier = 1 + scrollProgress * 3;
+                shape.mesh.rotation.x += shape.rotSpeed.x * speedMultiplier;
+                shape.mesh.rotation.y += shape.rotSpeed.y * speedMultiplier;
+                shape.mesh.rotation.z += shape.rotSpeed.z * speedMultiplier;
+                
+                // Floating motion becomes more pronounced
+                const floatIntensity = 1 + scrollProgress * 2;
+                shape.mesh.position.y += Math.sin(time + shape.floatOffset) * shape.floatSpeed * floatIntensity;
+                shape.mesh.position.x += Math.cos(time * 0.5 + shape.floatOffset) * shape.floatSpeed * 0.5 * floatIntensity;
+                
+                // Scale shapes larger on scroll
+                const scale = 1 + scrollProgress * 0.5;
+                shape.mesh.scale.set(scale, scale, scale);
+            });
+            
+            // Particles rotate faster and change color on scroll
+            const particleSpeed = 0.0002 + scrollProgress * 0.002;
+            particles.rotation.y += particleSpeed;
+            particles.rotation.x += particleSpeed * 0.5;
+            particlesMat.color.setHSL(0.58 + scrollProgress * 0.1, 0.8, 0.5 + scrollProgress * 0.15);
+            
+            // Camera zooms in on scroll
+            const targetZ = 10 - scrollProgress * 3;
+            camera.position.x += (mouseX * 5 - camera.position.x) * 0.08;
+            camera.position.y += (mouseY * 4 - camera.position.y) * 0.08;
+            camera.position.z += (targetZ - camera.position.z) * 0.05;
+            
+            camera.lookAt(scene.position);
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Resize handler
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // ===== GSAP ANIMATIONS =====
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hide loader
+        window.addEventListener('load', () => {
+            gsap.to('#loader', { opacity: 0, duration: 0.5, delay: 0.8, onComplete: () => {
+                document.getElementById('loader').style.display = 'none';
+            }});
+        });
+
+        // Page header animation
+        gsap.from('.page-header h1', { y: 50, opacity: 0, duration: 1, delay: 1 });
+        gsap.from('.page-header p', { y: 30, opacity: 0, duration: 1, delay: 1.2 });
+
+        // About content animations
+        gsap.from('.about-content', {
+            scrollTrigger: { trigger: '.about-content', start: 'top 80%' },
+            x: -50, opacity: 0, duration: 1
+        });
+
+        gsap.from('.about-grid .glass-card', {
+            scrollTrigger: { trigger: '.about-grid .glass-card', start: 'top 80%' },
+            x: 50, opacity: 0, duration: 1, delay: 0.2
+        });
+
+        // Stats counter animation
+        const statNumbers = document.querySelectorAll('.stat-number');
+        statNumbers.forEach(stat => {
+            const target = parseInt(stat.dataset.count);
+            gsap.to(stat, {
+                scrollTrigger: { trigger: stat, start: 'top 80%' },
+                innerHTML: target,
+                duration: 2,
+                snap: { innerHTML: 1 }
+            });
+        });
+
+        // Card animations
+        gsap.utils.toArray('.info-card').forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: { trigger: card, start: 'top 85%' },
+                y: 60, opacity: 0, duration: 0.8, delay: i * 0.1
+            });
+        });
+
+        // Mobile menu
+        document.getElementById('navToggle').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

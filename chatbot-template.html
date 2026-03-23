@@ -1,0 +1,92 @@
+<!-- Chatbot Toggle -->
+<div class="chatbot-toggle" id="chatbotToggle">
+    <i class="fas fa-comments"></i>
+</div>
+
+<!-- Fullscreen Chatbot Window -->
+<div class="chatbot-window" id="chatbotWindow">
+    <div class="chatbot-header">
+        <div class="chatbot-header-left">
+            <button class="chatbot-back" id="chatbotBack">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Website</span>
+            </button>
+            <div class="chatbot-avatar">
+                🎓
+            </div>
+            <div class="chatbot-info">
+                <h3>Rudraksh Academy Assistant</h3>
+                <div class="chatbot-status">
+                    <span class="status-dot"></span>
+                    <span>Online - Ready to help</span>
+                </div>
+            </div>
+        </div>
+        <button class="chatbot-close" id="chatbotClose">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    
+    <div class="chatbot-content">
+        <!-- Sidebar -->
+        <div class="chatbot-sidebar">
+            <h4>Rudraksh Academy Assistant</h4>
+            <p>I'm here to help you with appointments, course information, pricing, and any questions about our academy. Ask me anything!</p>
+            
+            <div class="sidebar-actions">
+                <button class="sidebar-btn" data-action="I want to book an appointment">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Book Appointment</span>
+                </button>
+                <button class="sidebar-btn" data-action="Tell me about your courses">
+                    <i class="fas fa-book"></i>
+                    <span>Our Courses</span>
+                </button>
+                <button class="sidebar-btn" data-action="What are the fees?">
+                    <i class="fas fa-rupee-sign"></i>
+                    <span>Pricing Info</span>
+                </button>
+                <button class="sidebar-btn" data-action="I need emergency help">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span>Emergency</span>
+                </button>
+                <button class="sidebar-btn" data-action="What are your timings?">
+                    <i class="fas fa-clock"></i>
+                    <span>Timings & Location</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Main Chat Area -->
+        <div class="chatbot-main">
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="chatbot-message bot">
+                    Hello! 👋 I'm your AI assistant at Rudraksh Academy. I'm here to help you with:
+                </div>
+                <div class="quick-options">
+                    <div class="quick-option" data-msg="📅 Booking appointments">📅 Booking appointments</div>
+                    <div class="quick-option" data-msg="📚 Information about our courses">📚 Course information</div>
+                    <div class="quick-option" data-msg="💰 Pricing and fee structure">💰 Pricing & fees</div>
+                    <div class="quick-option" data-msg="🚨 Emergency support">🚨 Emergency support</div>
+                    <div class="quick-option" data-msg="🕐 Timings and location">🕐 Timings & location</div>
+                </div>
+                <div class="chatbot-message bot">
+                    How can I assist you today?
+                </div>
+            </div>
+            
+            <div class="chatbot-input-area">
+                <div class="input-wrapper">
+                    <button class="attach-btn" id="attachBtn" title="Attach file">
+                        <i class="fas fa-paperclip"></i>
+                    </button>
+                    <input type="file" id="fileInput" accept="image/*,.pdf,.doc,.docx">
+                    <input type="text" id="chatbotInput" placeholder="Type your message here... (Press Enter to send)">
+                </div>
+                <button class="chatbot-send" id="chatbotSend">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
